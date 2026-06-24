@@ -1,5 +1,5 @@
 // variables names: ok
-namespace SunamoDevCode.Aps.Enums;
+namespace SunamoAps;
 
 public enum ClassCodeElements
 {

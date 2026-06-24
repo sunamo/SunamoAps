@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs.Data.ItemGroup;
+namespace SunamoAps;
 
 public abstract class ItemGroupElement
 {

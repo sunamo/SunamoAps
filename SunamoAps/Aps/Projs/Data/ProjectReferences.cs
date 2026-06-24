@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs.Data;
+namespace SunamoAps;
 
 public class ProjectReferences
 {

@@ -1,5 +1,5 @@
 // variables names: ok
-namespace SunamoDevCode.Aps.Interfaces;
+namespace SunamoAps;
 
 public interface IMainWindowAps
 {

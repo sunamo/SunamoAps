@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs.Results;
+namespace SunamoAps;
 
 public class IsProjectCsprojSdkStyleResult
 {

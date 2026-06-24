@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Algorithms;
+namespace SunamoAps;
 
 public class DeleteTemporaryFilesFromSolution
 {

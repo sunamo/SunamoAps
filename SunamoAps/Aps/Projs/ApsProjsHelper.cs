@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs;
+namespace SunamoAps;
 
 public class ApsProjsHelper
 {

@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Enums;
+namespace SunamoAps;
 
 // EN: All operations defined here are performed in a single method
 // CZ: Všechny operace co jsou zde se dělají v jediné metodě

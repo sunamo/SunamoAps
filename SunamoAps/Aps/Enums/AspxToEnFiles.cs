@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Enums;
+namespace SunamoAps;
 
 public enum AspxToEnFiles
 {

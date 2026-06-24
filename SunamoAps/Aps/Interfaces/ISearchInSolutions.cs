@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Interfaces;
+namespace SunamoAps;
 
 public interface ISearchInSolutions
 {

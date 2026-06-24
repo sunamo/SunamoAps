@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs;
+namespace SunamoAps;
 
 // In case when ProjectCollection wont work (like actually dont return any Compile elements)
 public class VsProjectFile

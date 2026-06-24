@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Enums;
+namespace SunamoAps;
 
 // Other 0, otherwise serie as in projects in sln
 public enum ApsPlugins : byte

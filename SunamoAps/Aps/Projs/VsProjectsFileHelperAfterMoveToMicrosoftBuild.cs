@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Projs;
+namespace SunamoAps;
 
 // EN: Methods that were moved to SunamoMicrosoftBuild.
 // They could not remain here due to transitive dependencies.

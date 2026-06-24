@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps.Helpers;
+namespace SunamoAps;
 
 public class SunamoWebHelper
 {

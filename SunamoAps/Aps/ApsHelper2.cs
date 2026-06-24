@@ -1,4 +1,4 @@
-namespace SunamoDevCode.Aps;
+namespace SunamoAps;
 
 public partial class ApsHelper : ApsPluginStatic
 {
