@@ -7,20 +7,14 @@ internal static partial class AllProjectsSearchSettings
     //static List<string> dontReplaceReferencesIn = null;
     internal static List<string>? DontReplaceReferencesIn { get; set; } = null;
     internal static
-#if ASYNC
     async Task<List<string>>
-#else
-    List<string>
-#endif
  DontReplaceReferencesInLoad(GetFileSettings getFileSettings)
     {
         if (DontReplaceReferencesIn == null)
         {
             var fn = getFileSettings("dontReplaceReferencesIn.txt");
             DontReplaceReferencesIn =
-#if ASYNC
     await
-#endif
  TF.ReadAllLines(fn);
             // Inlined from SF.RemoveComments - odstraňuje prázdné řádky a řádky začínající '#'
             DontReplaceReferencesIn = DontReplaceReferencesIn!.Where(line => !string.IsNullOrWhiteSpace(line) && !line.StartsWith("#")).ToList();
@@ -91,16 +85,7 @@ internal static partial class AllProjectsSearchSettings
         }
         return _webProjectsWildCard;
     }
-    /// <summary>
-    /// EN: Contains zero-indexed folders to search in, e.g. 1=D:\Documents\ but whether to search is in sectionSearchFoldersChecked
-    /// CZ: Obsahuje od nuly číslované složky ve kterých má vyhledávat, např. 1=D:\Documents\ ale to zda se má vyhledávat je v sectionSearchFoldersChecked
-    /// </summary>
     const string sectionSearchFolders = "SearchFolders";
-
-    /// <summary>
-    /// EN: Contains zero-indexed bool values, index refers to folder in sectionSearchFolders and bool says whether to search in this folder
-    /// CZ: Obsahuje od nuly číslované bool hodnoty, index odkazuje na složku v sectionSearchFolders a bool říká zda v této složce se má vyhledávat
-    /// </summary>
     const string sectionSearchFoldersChecked = "SearchFoldersChecked";
     internal static string PathAutoYes(GetFileData getFileData)
     {
@@ -122,11 +107,6 @@ internal static partial class AllProjectsSearchSettings
         var pathNotToTranslate = getFileData("ManuallyNo.txt");
         return pathNotToTranslate;
     }
-    /// <summary>
-    /// EN: Returns whether the path exists in search paths
-    /// CZ: G zda cesta A1 je v cestách, ve kterých aplikace hledá
-    /// </summary>
-    /// <param name="path">Path to check</param>
     internal static bool ExistsSearchFolderByPath(string path)
     {
         path = FS.WithEndSlash(path);
@@ -148,10 +128,6 @@ internal static partial class AllProjectsSearchSettings
         return false;
     }
 
-    /// <summary>
-    /// EN: Returns all paths in which to search
-    /// CZ: Vrátí všechny cesty ve kterých vyhledávat
-    /// </summary>
     internal static List<string> GetAllNormalizedSearchFolders()
     {
         List<string> folders = new List<string>();

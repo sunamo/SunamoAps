@@ -1,30 +1,15 @@
 namespace SunamoDevCode.Aps;
 
-/// <summary>
-/// EN: Helper class for APS (AllProjectsSearch) functionality
-/// CZ: Pomocná třída pro APS (AllProjectsSearch) funkcionalitu
-/// </summary>
 public partial class ApsHelper : ApsPluginStatic
 {
-    /// <summary>
-    /// EN: Singleton instance of ApsHelper
-    /// CZ: Singleton instance ApsHelper
-    /// </summary>
     public static ApsHelper Instance = new ApsHelper();
-    /// <summary>
-    /// Never create new instance, just call method
-    /// </summary>
+    // Never create new instance, just call method
     public PushSolutionsData pushSolutionsData = new PushSolutionsData();
     string? typed = null;
     bool cmd = false;
     GitBashBuilder gitPullVps = new GitBashBuilder(new TextBuilderDC());
     GitBashBuilder gitPushVps = new GitBashBuilder(new TextBuilderDC());
-    /// <summary>
-    /// Separates all projects into web and non-web categories. Do not use XmlDocumentsCache.
-    /// </summary>
-    /// <param name="logger">Logger instance.</param>
-    /// <param name="withCsprojs">If true, returns full csproj paths; if false, returns directory paths.</param>
-    /// <returns>Tuple with web projects as Item1 and non-web projects as Item2.</returns>
+    // Separates all projects into web and non-web categories. Do not use XmlDocumentsCache.
     public static Tuple<List<string>, List<string>> WebAndNonWebProjects(ILogger logger, bool withCsprojs = true)
     {
         List<string> webProjects = new List<string>();
@@ -52,23 +37,11 @@ public partial class ApsHelper : ApsPluginStatic
         return new Tuple<List<string>, List<string>>(webProjects, notWebProjects);
     }
 
-    /// <summary>
-    /// EN: Determines whether the project is a web project
-    /// CZ: Určuje zda je projekt webový projekt
-    /// </summary>
-    /// <param name="projectPath">Path to the project</param>
     public static bool IsWeb(string projectPath)
     {
         return CA.ContainsAnyFromElementBool(projectPath, AllProjectsSearchSettings.DontReplaceReferencesIn!);
     }
 
-    /// <summary>
-    /// Handles the dialog result for continuous push solutions window, executing git operations on selected solutions.
-    /// </summary>
-    /// <param name="builder">Dialog result; true to proceed with push.</param>
-    /// <param name="psInvoke">Function to invoke PowerShell commands.</param>
-    /// <param name="eVs">Path to Visual Studio root folder.</param>
-    /// <param name="pathGetMessagesFromGitOutput">Path for storing git output messages.</param>
     public async Task PushSolutionsContinuouslyWindow_ChangeDialogResult(bool? builder, Func<List<string>, Task<List<List<string>>>> psInvoke, string eVs, string pathGetMessagesFromGitOutput)
     {
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult");
@@ -121,12 +94,6 @@ public partial class ApsHelper : ApsPluginStatic
                 var slns = item.GetSolutions(UsedRepository, true, skipTheseGit);
                 foreach (var sln in slns)
                 {
-#if DEBUG
-                    //if (sln.NameSolution != "AllProjectsSearch.Cmd")
-                    //{
-                    //    continue;
-                    //}
-#endif
                     if (isCs)
                     {
 #region MyRegion
@@ -167,9 +134,6 @@ public partial class ApsHelper : ApsPluginStatic
                     }
                     else
                     {
-#if DEBUG
-                        //DebugLogger.Instance.WriteLine("Dont push: " + sln.NameSolution);
-#endif
                     }
                 }
             }
@@ -186,16 +150,13 @@ public partial class ApsHelper : ApsPluginStatic
             };
             if (cmd)
             {
-#if ASYNC
                 await
-#endif
                 CheckForPushInThread(al, psInvoke, eVs, pathGetMessagesFromGitOutput);
             }
             else
             {
                 MoveToApsWpf();
 #region New
-            //#if ASYNC
             //                await
             //#endif
             //                CheckForPushInThread(al);
@@ -218,14 +179,6 @@ public partial class ApsHelper : ApsPluginStatic
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult end");
     }
 
-    /// <summary>
-    /// Gets all projects filtered by web/non-web category.
-    /// </summary>
-    /// <param name="logger">Logger instance.</param>
-    /// <param name="vs17">Repository location, must be Vs17.</param>
-    /// <param name="webNonWeb">Filter for web, non-web, or both project types.</param>
-    /// <param name="withCsprojs">If true, returns csproj paths; if false, returns directory paths.</param>
-    /// <returns>Filtered list of project paths.</returns>
     public List<string>? AllProjects(ILogger logger, RepositoryLocal vs17, WebNonWeb webNonWeb, bool withCsprojs = true)
     {
         if (vs17 != RepositoryLocal.Vs17)

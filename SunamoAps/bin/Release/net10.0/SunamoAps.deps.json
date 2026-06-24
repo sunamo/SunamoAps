@@ -9,10 +9,11 @@
       "SunamoAps/26.6.21.2": {
         "dependencies": {
           "SunamoDevCodeBase": "26.6.21.1",
-          "SunamoDevCodeCore": "26.6.21.1",
+          "SunamoDevCodeCore": "26.6.21.2",
           "SunamoMsBuild": "26.6.21.1",
-          "SunamoSolutionsIndexer": "26.6.21.2",
-          "TextCopy": "6.2.1"
+          "SunamoSlnIndexer": "26.6.21.5",
+          "TextCopy": "6.2.1",
+          "SunamoSolutionsIndexer": "26.6.21.5"
         },
         "runtime": {
           "SunamoAps.dll": {}
@@ -108,16 +109,16 @@
           }
         }
       },
-      "SunamoDevCodeCore/26.6.21.1": {
+      "SunamoDevCodeCore/26.6.21.2": {
         "dependencies": {
           "SunamoCSharp": "26.6.21.9",
           "SunamoDevCodeBase": "26.6.21.1",
-          "SunamoSolutionsIndexer": "26.6.21.2"
+          "SunamoSlnIndexer": "26.6.21.5"
         },
         "runtime": {
           "SunamoDevCodeCore.dll": {
-            "assemblyVersion": "26.6.21.1",
-            "fileVersion": "26.6.21.1"
+            "assemblyVersion": "26.6.21.2",
+            "fileVersion": "26.6.21.2"
           }
         }
       },
@@ -129,14 +130,22 @@
           }
         }
       },
-      "SunamoSolutionsIndexer/26.6.21.2": {
+      "SunamoSlnIndexer/26.6.21.5": {
         "dependencies": {
           "SunamoDevCodeBase": "26.6.21.1"
         },
         "runtime": {
           "SunamoSolutionsIndexer.dll": {
-            "assemblyVersion": "26.6.21.2",
-            "fileVersion": "26.6.21.2"
+            "assemblyVersion": "26.6.21.5",
+            "fileVersion": "26.6.21.5"
+          }
+        }
+      },
+      "SunamoSolutionsIndexer/26.6.21.5": {
+        "runtime": {
+          "SunamoSolutionsIndexer.dll": {
+            "assemblyVersion": "26.6.21.5",
+            "fileVersion": "26.6.21.5"
           }
         }
       }
@@ -207,7 +216,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoDevCodeCore/26.6.21.1": {
+    "SunamoDevCodeCore/26.6.21.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -217,8 +226,13 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoSolutionsIndexer/26.6.21.2": {
+    "SunamoSlnIndexer/26.6.21.5": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SunamoSolutionsIndexer/26.6.21.5": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

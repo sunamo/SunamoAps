@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCopyrightAttribute("www.sunamo.cz")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("APS (All Projects Search) utilities extracted from SunamoDevCode.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("26.6.21.2")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("26.6.21.2+0a6fbc2099ecd99f29d9b59f10c96f256117196a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("26.6.21.2+579939ce8a16e2a0d89007fc76344c0d1ca522ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("SunamoAps")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SunamoAps")]
 [assembly: System.Reflection.AssemblyVersionAttribute("26.6.21.2")]
