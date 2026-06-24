@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps;
 
 internal static partial class AllProjectsSearchSettings
 {

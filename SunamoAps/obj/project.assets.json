@@ -1875,7 +1875,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "26.6.21.2",
+    "version": "26.6.25.3",
     "restore": {
       "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoAps\\SunamoAps\\SunamoAps.csproj",
       "projectName": "SunamoAps",

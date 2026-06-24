@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "SunamoAps/26.6.21.2": {
+      "SunamoAps/26.6.25.3": {
         "dependencies": {
           "SunamoDevCodeBase": "26.6.21.1",
           "SunamoDevCodeCore": "26.6.21.2",
@@ -161,7 +161,7 @@
     }
   },
   "libraries": {
-    "SunamoAps/26.6.21.2": {
+    "SunamoAps/26.6.25.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

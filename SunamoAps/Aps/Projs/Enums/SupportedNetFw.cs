@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps.Projs.Enums;
 
 public enum SupportedNetFw
 {

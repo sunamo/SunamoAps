@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps.Projs;
 
 // Use VsProjectFile,
 public partial class VsProjectsFileHelper

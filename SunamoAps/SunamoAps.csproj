@@ -3,9 +3,9 @@
     <TargetFrameworks>net10.0;net9.0;net8.0;netstandard2.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <Platforms>AnyCPU;x86</Platforms>
-    <Version>26.6.21.2</Version>
+    <Version>26.6.25.3</Version>
     <Description>APS (All Projects Search) utilities extracted from SunamoDevCode.</Description>
-    <PackageReleaseNotes>y</PackageReleaseNotes>
+    <PackageReleaseNotes>feat: removed some #if</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.github.io/PlatformIndependentNuGetPackages/SunamoAps/</PackageProjectUrl>

@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps.Values;
 
 public class MoveToShared : IMoveToShared
 {

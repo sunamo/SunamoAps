@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps.Data;
 
 public class SolutionFolderDetailedInfo : SolutionFolder
 {

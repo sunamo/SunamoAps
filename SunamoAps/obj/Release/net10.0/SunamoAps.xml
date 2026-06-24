@@ -4,7 +4,7 @@
         <name>SunamoAps</name>
     </assembly>
     <members>
-        <member name="M:SunamoDevCode.Aps.Projs.VsProjectsFileHelper.DuplicatedCsproj(Microsoft.Extensions.Logging.ILogger,System.String)">
+        <member name="M:SunamoAps.Aps.Projs.VsProjectsFileHelper.DuplicatedCsproj(Microsoft.Extensions.Logging.ILogger,System.String)">
             <summary>
             Return paths of all csprojs
             </summary>

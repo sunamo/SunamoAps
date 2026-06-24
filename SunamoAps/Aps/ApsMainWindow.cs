@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps;
 
 public class ApsMainWindow : IMainWindowCsFileFilter, IAbstractCatalog<string, string>
 {

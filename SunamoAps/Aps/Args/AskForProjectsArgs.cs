@@ -1,4 +1,4 @@
-namespace SunamoAps;
+namespace SunamoAps.Aps.Args;
 
 public class AskForProjectsOrSlnsArgs
 {
