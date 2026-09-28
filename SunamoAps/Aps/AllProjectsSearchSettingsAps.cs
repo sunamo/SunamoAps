@@ -6,33 +6,27 @@ internal static partial class AllProjectsSearchSettings
 
     #region sectionSearchFoldersChecked
 
-    public static bool IsFolderSearchChecked(string seriesIndex)
+    public static bool IsFolderSearchChecked()
     {
-        _ = seriesIndex;
         return true;
     }
 
-    public static void SetSearchFolderChecked(string seriesIndex, bool isChecked)
+    public static void SetSearchFolderChecked()
     {
-        _ = seriesIndex;
-        _ = isChecked;
     }
 
-    public static bool ExistsFolderSearchBySerie(string seriesIndex)
+    public static bool ExistsFolderSearchBySerie()
     {
-        _ = seriesIndex;
         return false;
     }
 
-    public static string GetSearchFolderNormalized(string seriesIndex)
+    public static string GetSearchFolderNormalized()
     {
-        _ = seriesIndex;
         return string.Empty;
     }
 
-    public static int AddFolderSearch(string folderPath)
+    public static int AddFolderSearch()
     {
-        _ = folderPath;
         return 1;
     }
 

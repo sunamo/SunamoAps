@@ -24,6 +24,7 @@ public class DeleteTemporaryFilesFromSolution
     public static List<string> ClearSolution(ILogger logger, string solutionFolder, bool delete, string folderWithTemporaryMovedContentWithoutBackslash, bool keepPackageJson = false)
     {
         string folderWithProjectsFolders = FS.GetDirectoryName(solutionFolder);
+        // Navigate up directory tree until we find the solutions folder
         while (!SolutionsIndexerHelper.IsTheSolutionsFolder(FS.GetFileName(folderWithProjectsFolders)))
         {
             folderWithProjectsFolders = FS.GetDirectoryName(folderWithProjectsFolders);
