@@ -1,4 +1,0 @@
-C:\Users\aktiv\AppData\Local\Temp\build_audit_logs\SunamoAps.deps.json
-C:\Users\aktiv\AppData\Local\Temp\build_audit_logs\SunamoAps.dll
-C:\Users\aktiv\AppData\Local\Temp\build_audit_logs\SunamoAps.pdb
-C:\Users\aktiv\AppData\Local\Temp\build_audit_logs\SunamoAps.xml

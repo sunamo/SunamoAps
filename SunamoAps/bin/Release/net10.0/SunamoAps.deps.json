@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "SunamoAps/26.9.28.6": {
+      "SunamoAps/26.6.25.4": {
         "dependencies": {
-          "SunamoDevCodeBase": "26.6.25.5",
-          "SunamoDevCodeCore": "26.6.25.4",
-          "SunamoMsBuild": "26.6.25.2",
-          "SunamoSlnIndexer": "26.6.25.2",
+          "SunamoDevCodeBase": "26.6.21.1",
+          "SunamoDevCodeCore": "26.6.21.2",
+          "SunamoMsBuild": "26.6.21.1",
+          "SunamoSlnIndexer": "26.6.21.5",
           "TextCopy": "6.2.1",
-          "SunamoSolutionsIndexer": "26.6.25.2"
+          "SunamoSolutionsIndexer": "26.6.21.5"
         },
         "runtime": {
           "SunamoAps.dll": {}
@@ -23,8 +23,7 @@
         "runtime": {
           "lib/netstandard2.1/Case.NET.dll": {
             "assemblyVersion": "0.3.36.0",
-            "fileVersion": "0.3.36.0",
-            "localPath": "Case.NET.dll"
+            "fileVersion": "0.3.36.0"
           }
         }
       },
@@ -35,8 +34,7 @@
         "runtime": {
           "lib/netstandard2.1/Case.NET.Extensions.dll": {
             "assemblyVersion": "0.2.46.0",
-            "fileVersion": "0.2.46.0",
-            "localPath": "Case.NET.Extensions.dll"
+            "fileVersion": "0.2.46.0"
           }
         }
       },
@@ -44,8 +42,7 @@
         "runtime": {
           "lib/net9.0/Diacritics.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.1.4.0",
-            "localPath": "Diacritics.dll"
+            "fileVersion": "4.1.4.0"
           }
         }
       },
@@ -53,8 +50,7 @@
         "runtime": {
           "lib/net7.0/HtmlAgilityPack.dll": {
             "assemblyVersion": "1.12.4.0",
-            "fileVersion": "1.12.4.0",
-            "localPath": "HtmlAgilityPack.dll"
+            "fileVersion": "1.12.4.0"
           }
         }
       },
@@ -62,8 +58,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305",
-            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -74,8 +69,7 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305",
-            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -86,23 +80,22 @@
         "runtime": {
           "lib/net6.0/TextCopy.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0",
-            "localPath": "TextCopy.dll"
+            "fileVersion": "1.0.0.0"
           }
         }
       },
-      "SunamoCSharp/26.6.25.13": {
+      "SunamoCSharp/26.6.21.9": {
         "dependencies": {
-          "SunamoDevCodeBase": "26.6.25.5"
+          "SunamoDevCodeBase": "26.6.21.1"
         },
         "runtime": {
           "SunamoCSharp.dll": {
-            "assemblyVersion": "26.6.25.13",
-            "fileVersion": "26.6.25.13"
+            "assemblyVersion": "26.6.21.9",
+            "fileVersion": "26.6.21.9"
           }
         }
       },
-      "SunamoDevCodeBase/26.6.25.5": {
+      "SunamoDevCodeBase/26.6.21.1": {
         "dependencies": {
           "CaseDotNet.Extensions": "0.2.46",
           "Diacritics": "4.1.4",
@@ -111,55 +104,55 @@
         },
         "runtime": {
           "SunamoDevCodeBase.dll": {
-            "assemblyVersion": "26.6.25.5",
-            "fileVersion": "26.6.25.5"
+            "assemblyVersion": "26.6.21.1",
+            "fileVersion": "26.6.21.1"
           }
         }
       },
-      "SunamoDevCodeCore/26.6.25.4": {
+      "SunamoDevCodeCore/26.6.21.2": {
         "dependencies": {
-          "SunamoCSharp": "26.6.25.13",
-          "SunamoDevCodeBase": "26.6.25.5",
-          "SunamoSlnIndexer": "26.6.25.2"
+          "SunamoCSharp": "26.6.21.9",
+          "SunamoDevCodeBase": "26.6.21.1",
+          "SunamoSlnIndexer": "26.6.21.5"
         },
         "runtime": {
           "SunamoDevCodeCore.dll": {
-            "assemblyVersion": "26.6.25.4",
-            "fileVersion": "26.6.25.4"
+            "assemblyVersion": "26.6.21.2",
+            "fileVersion": "26.6.21.2"
           }
         }
       },
-      "SunamoMsBuild/26.6.25.2": {
+      "SunamoMsBuild/26.6.21.1": {
         "runtime": {
           "SunamoMsBuild.dll": {
-            "assemblyVersion": "26.6.25.2",
-            "fileVersion": "26.6.25.2"
+            "assemblyVersion": "26.6.21.1",
+            "fileVersion": "26.6.21.1"
           }
         }
       },
-      "SunamoSlnIndexer/26.6.25.2": {
+      "SunamoSlnIndexer/26.6.21.5": {
         "dependencies": {
-          "SunamoDevCodeBase": "26.6.25.5"
+          "SunamoDevCodeBase": "26.6.21.1"
         },
         "runtime": {
           "SunamoSolutionsIndexer.dll": {
-            "assemblyVersion": "26.6.25.2",
-            "fileVersion": "26.6.25.2"
+            "assemblyVersion": "26.6.21.5",
+            "fileVersion": "26.6.21.5"
           }
         }
       },
-      "SunamoSolutionsIndexer/26.6.25.2": {
+      "SunamoSolutionsIndexer/26.6.21.5": {
         "runtime": {
           "SunamoSolutionsIndexer.dll": {
-            "assemblyVersion": "26.6.25.2",
-            "fileVersion": "26.6.25.2"
+            "assemblyVersion": "26.6.21.5",
+            "fileVersion": "26.6.21.5"
           }
         }
       }
     }
   },
   "libraries": {
-    "SunamoAps/26.9.28.6": {
+    "SunamoAps/26.6.25.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -213,32 +206,32 @@
       "path": "textcopy/6.2.1",
       "hashPath": "textcopy.6.2.1.nupkg.sha512"
     },
-    "SunamoCSharp/26.6.25.13": {
+    "SunamoCSharp/26.6.21.9": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoDevCodeBase/26.6.25.5": {
+    "SunamoDevCodeBase/26.6.21.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoDevCodeCore/26.6.25.4": {
+    "SunamoDevCodeCore/26.6.21.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoMsBuild/26.6.25.2": {
+    "SunamoMsBuild/26.6.21.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoSlnIndexer/26.6.25.2": {
+    "SunamoSlnIndexer/26.6.21.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "SunamoSolutionsIndexer/26.6.25.2": {
+    "SunamoSolutionsIndexer/26.6.21.5": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
