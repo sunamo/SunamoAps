@@ -14,7 +14,7 @@ public partial class ApsHelper : ApsPluginStatic
     await
             GitHelper.PushSolution(asyncPushSolutions.Release, asyncPushSolutions.GitBashBuilder, asyncPushSolutions.PushArgs, asyncPushSolutions.CommitMessage!, sln.FullPathFolder, pushSolutionsData, asyncPushSolutions.GitStatus, psInvoke))
             {
-                var fn = FS.GetFileName(sln.FullPathFolder);
+                var fileName = FS.GetFileName(sln.FullPathFolder);
                 if (pushSolutionsData.onlyThese == VpsHelperDevCode.ListVpsNew)
                 {
                     if (!pushSolutionsData.onlyThese.Contains(sln.NameSolution))
@@ -23,9 +23,9 @@ public partial class ApsHelper : ApsPluginStatic
                     }
                 }
 
-                gitPullVps.Cd( /*Path.Combine(VpsHelperDevCode.path,*/fn);
+                gitPullVps.Cd( /*Path.Combine(VpsHelperDevCode.path,*/fileName);
                 gitPullVps.Pull();
-                ThisApp.Info(fn);
+                ThisApp.Info(fileName);
             }
         }
 
@@ -114,18 +114,18 @@ public partial class ApsHelper : ApsPluginStatic
         {
             if (section.Count > 0)
             {
-                int i = section.Count - 1;
-                if (section[i].StartsWith(restored))
+                int lastIndex = section.Count - 1;
+                if (section[lastIndex].StartsWith(restored))
                 {
                     restoredSections.Add(section);
                 }
-                else if (section[i].StartsWith(failedToRestore))
+                else if (section[lastIndex].StartsWith(failedToRestore))
                 {
                     failedSections.Add(section);
                 }
                 else
                 {
-                    ThrowEx.NotImplementedCase(section[i]);
+                    ThrowEx.NotImplementedCase(section[lastIndex]);
                 }
             }
         }
@@ -189,9 +189,9 @@ public partial class ApsHelper : ApsPluginStatic
         if (BTS.GetValueOfNullable(shouldProcessMessages))
         {
             lines = CA.RemoveStringsEmptyTrimBefore(lines);
-            for (int i = 0; i < lines.Count; i++)
+            for (int index = 0; index < lines.Count; index++)
             {
-                string line = lines[i];
+                string line = lines[index];
                 bool shouldAdd = false;
                 if (gitMessageTypes.HasFlag(GitTypesOfMessages.fatal) && line.StartsWith("fatal: "))
                 {
@@ -206,7 +206,7 @@ public partial class ApsHelper : ApsPluginStatic
                 if (shouldAdd)
                 {
                     // -1 is in GetNameSolution
-                    string nameSolution = GetNameSolution(lines, i, eVs)!;
+                    string nameSolution = GetNameSolution(lines, index, eVs)!;
                     string all = nameSolution + " " + line;
                     badSolutions.Add(all);
                 }

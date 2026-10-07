@@ -15,7 +15,7 @@ public partial class VsProjectsFileHelper
         var result = FSGetFiles.GetFiles(logger, path, "*.csproj", true);
         var allCsproj = result.ToList();
         CAChangeContent.ChangeContent0(null!, allCsproj, FS.GetFileName /*SHParts.RemoveAfterLast, "\\"*/);
-        allCsproj.RemoveAll(d => d == "Runner.csproj");
+        allCsproj.RemoveAll(csproj => csproj == "Runner.csproj");
         var dupl = CAG.GetDuplicities(allCsproj);
         if (dupl.Count > 0)
         {

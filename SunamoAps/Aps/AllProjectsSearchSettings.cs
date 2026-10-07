@@ -12,10 +12,10 @@ internal static partial class AllProjectsSearchSettings
     {
         if (DontReplaceReferencesIn == null)
         {
-            var fn = getFileSettings("dontReplaceReferencesIn.txt");
+            var fileName = getFileSettings("dontReplaceReferencesIn.txt");
             DontReplaceReferencesIn =
     await
- TF.ReadAllLines(fn);
+ TF.ReadAllLines(fileName);
             // Inlined from SF.RemoveComments - odstraňuje prázdné řádky a řádky začínající '#'
             DontReplaceReferencesIn = DontReplaceReferencesIn!.Where(line => !string.IsNullOrWhiteSpace(line) && !line.StartsWith("#")).ToList();
         }
@@ -117,7 +117,7 @@ internal static partial class AllProjectsSearchSettings
     internal static bool ExistsSearchFolderByPath(string path)
     {
         path = FS.WithEndSlash(path);
-        for (int i = 0; i < 1000; i++)
+        for (int index = 0; index < 1000; index++)
         {
             if (!ExistsFolderSearchBySerie())
             {
@@ -139,7 +139,7 @@ internal static partial class AllProjectsSearchSettings
     internal static List<string> GetAllNormalizedSearchFolders()
     {
         List<string> folders = new List<string>();
-        for (int i = 0; i < 1000; i++)
+        for (int index = 0; index < 1000; index++)
         {
             var exists = ExistsFolderSearchBySerie();
             if (!exists)

@@ -87,14 +87,14 @@ public class VsProjectFile
     {
         return element.ChildNodes.First(name);
     }
-    public List<XmlNode> ReturnAllItemGroup(ItemGroups ig)
+    public List<XmlNode> ReturnAllItemGroup(ItemGroups itemGroup)
     {
         var project = XmlHelper.GetElementOfName(xDocument!, "Project")!;
         var itemGroups = XmlHelper.GetElementsOfName(project!, "ItemGroup");
         var xelements = new List<XmlNode>();
         foreach (var item in itemGroups)
         {
-            xelements.AddRange(XmlHelper.GetElementsOfName(item, ig.ToString()));
+            xelements.AddRange(XmlHelper.GetElementsOfName(item, itemGroup.ToString()));
         }
         return xelements;
     }
