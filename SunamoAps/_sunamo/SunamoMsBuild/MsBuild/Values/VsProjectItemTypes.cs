@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoMsBuild;
+namespace SunamoAps._sunamo.SunamoMsBuild.MsBuild.Values;
 
 internal class VsProjectItemTypes
 {

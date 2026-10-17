@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoSolutionsIndexer;
+namespace SunamoAps._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer;
 
 public class FoldersWithSolutionsList : List<FoldersWithSolutions>
 {

@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoDevCodeBase;
+namespace SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoExceptions;
 
 // © www.sunamo.cz. All Rights Reserved.
 internal sealed partial class Exceptions

@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoDevCodeBase;
+namespace SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoEnums.Enums;
 
 public enum GitTypesOfMessages
 {

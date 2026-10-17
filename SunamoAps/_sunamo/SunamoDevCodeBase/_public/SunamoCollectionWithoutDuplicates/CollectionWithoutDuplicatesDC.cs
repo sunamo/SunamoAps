@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoDevCodeBase;
+namespace SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoCollectionWithoutDuplicates;
 
 internal class CollectionWithoutDuplicatesDC<T> : CollectionWithoutDuplicatesBaseDC<T>
 {
