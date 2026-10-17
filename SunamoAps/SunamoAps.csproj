@@ -5,7 +5,7 @@
     <Platforms>AnyCPU;x86</Platforms>
     <Version>26.10.7.9</Version>
     <Description>APS (All Projects Search) utilities extracted from SunamoDevCode.</Description>
-    <PackageReleaseNotes>Dokonceni rozdeleni SunamoDevCode: signatury 2204b3c</PackageReleaseNotes>
+    <PackageReleaseNotes>Rename short identifiers to descriptive names</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.github.io/PlatformIndependentNuGetPackages/SunamoAps/</PackageProjectUrl>

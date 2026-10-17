@@ -1,4 +1,4 @@
-﻿namespace SunamoAps._sunamo.SunamoDevCodeBase;
+namespace SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoCollectionOnDrive;
 
 internal abstract class CollectionOnDriveBase<T>(ILogger logger) : List<T>
 {
