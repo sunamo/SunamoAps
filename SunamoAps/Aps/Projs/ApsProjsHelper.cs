@@ -6,17 +6,17 @@ public class ApsProjsHelper
 
     public static void ReplacePathWithCsproj(ILogger logger, List<string> projectsToAdd)
     {
-        for (int i = 0; i < projectsToAdd.Count; i++)
+        for (int index = 0; index < projectsToAdd.Count; index++)
         {
-            var item = projectsToAdd[i];
+            var item = projectsToAdd[index];
             var csproj = ApsHelper.Instance.GetCsprojsOnlyTopDirectory(logger, item);
             if (csproj.Count > 0)
             {
-                projectsToAdd[i] = csproj[0];
+                projectsToAdd[index] = csproj[0];
             }
             else
             {
-                projectsToAdd[i] = $"Folder {item} doesn't have csproj";
+                projectsToAdd[index] = $"Folder {item} doesn't have csproj";
             }
         }
     }
@@ -46,9 +46,9 @@ public class ApsProjsHelper
             {
                 ThrowEx.DifferentCountInLists("nodes", projectReferences.Nodes.Count, "projs", projectReferences.Projects.Count);
             }
-            for (int i = 0; i < projectReferences.Nodes.Count; i++)
+            for (int index = 0; index < projectReferences.Nodes.Count; index++)
             {
-                var projectPath = projectReferences.Projects[i];
+                var projectPath = projectReferences.Projects[index];
                 var isAbsolutePath = FS.IsAbsolutePath(projectPath);
                 if (DefaultPaths.IsIgnored(projectPath, basePath))
                 {
@@ -57,7 +57,7 @@ public class ApsProjsHelper
                 if (isAbsolutePath)
                 {
                     var relativePath = PathPolyfill.GetRelativePath(csprojPath, projectPath);
-                    var node = projectReferences.Nodes[i];
+                    var node = projectReferences.Nodes[index];
                     XmlNode clonedNode = node.Clone();
                     XmlHelper.SetAttribute(clonedNode, "Include", relativePath);
                     node.ParentNode!.ReplaceChild(clonedNode, node);

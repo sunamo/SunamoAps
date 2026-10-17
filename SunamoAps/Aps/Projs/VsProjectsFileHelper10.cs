@@ -33,42 +33,42 @@ public partial class VsProjectsFileHelper
         {
             return new ProjectReferences();
         }
-        var vs = new VsProjectFile();
+        var projectFile = new VsProjectFile();
         await
-        vs.Load(csprojPath, dictToAvoidCollectionWasChanged);
-        if (!vs.IsValidXml)
+        projectFile.Load(csprojPath, dictToAvoidCollectionWasChanged);
+        if (!projectFile.IsValidXml)
         {
             return new ProjectReferences();
         }
-        var nodes = vs.ReturnAllItemGroup(ItemGroups.ProjectReference);
-        var projectReferences = nodes.Select(d => XmlHelper.Attr(d, "Include")!).ToList();
-        var dr = FS.GetDirectoryName(csprojPath);
+        var nodes = projectFile.ReturnAllItemGroup(ItemGroups.ProjectReference);
+        var projectReferences = nodes.Select(node => XmlHelper.Attr(node, "Include")!).ToList();
+        var directoryName = FS.GetDirectoryName(csprojPath);
         if (uriKind == UriKind.Absolute)
         {
-            CAChangeContent.ChangeContent(new ChangeContentArgsDC { }, projectReferences, FS.GetAbsolutePath2, dr);
+            CAChangeContent.ChangeContent(new ChangeContentArgsDC { }, projectReferences, FS.GetAbsolutePath2, directoryName);
         }
         else if (uriKind == UriKind.Relative)
         {
-            CAChangeContent.ChangeContent(new ChangeContentArgsDC { SwitchFirstAndSecondArg = true }, projectReferences, null!, dr, PathPolyfill.GetRelativePath);
+            CAChangeContent.ChangeContent(new ChangeContentArgsDC { SwitchFirstAndSecondArg = true }, projectReferences, null!, directoryName, PathPolyfill.GetRelativePath);
         }
-        var pr = new ProjectReferences { Projects = projectReferences, Nodes = nodes };
+        var projectReferencesResult = new ProjectReferences { Projects = projectReferences, Nodes = nodes };
         if (!cacheProjectReferences.ContainsKey(csprojPath))
         {
-            cacheProjectReferences.Add(csprojPath, pr);
+            cacheProjectReferences.Add(csprojPath, projectReferencesResult);
         }
-        return pr;
+        return projectReferencesResult;
     }
     #endregion
     public static async Task AddFilesToCsproj(SolutionFolder sln, string csprojpath, List<string> files)
     {
         var containedFiles = new List<string>();
         var dir = FS.GetDirectoryName(csprojpath);
-        var vs = new VsProjectFile(csprojpath);
-        if (!vs.IsValidXml)
+        var projectFile = new VsProjectFile(csprojpath);
+        if (!projectFile.IsValidXml)
         {
             return;
         }
-        var compile = vs.ReturnAllItemGroup(ItemGroups.Compile).Select(d => XmlHelper.Attr(d, "Include")!);
+        var compile = projectFile.ReturnAllItemGroup(ItemGroups.Compile).Select(node => XmlHelper.Attr(node, "Include")!);
         foreach (var item in compile)
         {
             containedFiles.Add(FS.GetAbsolutePath(dir, item!));
@@ -77,13 +77,13 @@ public partial class VsProjectsFileHelper
         {
             if (!containedFiles.Contains(item))
             {
-                var c = new CompileItemGroup(csprojpath);
+                var compileItemGroup = new CompileItemGroup(csprojpath);
                 var relativePathFromSolution = ApsHelper.Instance.GetRelativePathFromSolution(sln, item);
                 var tokens = FS.GetTokens(relativePathFromSolution);
                 tokens.RemoveAt(0);
                 tokens.RemoveAt(0);
-                c.Include = Path.Combine(tokens.ToArray());
-                await AddItemGroupSdkStyle(csprojpath, ItemGroups.Compile, c, true);
+                compileItemGroup.Include = Path.Combine(tokens.ToArray());
+                await AddItemGroupSdkStyle(csprojpath, ItemGroups.Compile, compileItemGroup, true);
             }
         }
     }

@@ -22,9 +22,9 @@ internal class SHSplit
             if (text.Count > 0)
             {
                 var paddedResult = new List<string>();
-                for (var i = 0; i < parts; i++)
-                    if (i < text.Count)
-                        paddedResult.Add(text[i]);
+                for (var index = 0; index < parts; index++)
+                    if (index < text.Count)
+                        paddedResult.Add(text[index]);
                     else
                         paddedResult.Add("");
                 return paddedResult;
@@ -40,15 +40,15 @@ internal class SHSplit
         // Pokud je pocet ziskanych partu vetsi nez kolik ma byt, pripojim ty co josu navic do zbytku
         parts--;
         var result = new List<string>();
-        for (var i = 0; i < text.Count; i++)
-            if (i < parts)
-                result.Add(text[i]);
-            else if (i == parts)
-                result.Add(text[i] + delimiter);
-            else if (i != text.Count - 1)
-                result[parts] += text[i] + delimiter;
+        for (var partIndex = 0; partIndex < text.Count; partIndex++)
+            if (partIndex < parts)
+                result.Add(text[partIndex]);
+            else if (partIndex == parts)
+                result.Add(text[partIndex] + delimiter);
+            else if (partIndex != text.Count - 1)
+                result[parts] += text[partIndex] + delimiter;
             else
-                result[parts] += text[i];
+                result[parts] += text[partIndex];
         return result;
     }
 

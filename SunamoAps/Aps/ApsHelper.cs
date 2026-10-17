@@ -138,7 +138,7 @@ public partial class ApsHelper : ApsPluginStatic
                 }
             }
 
-            AsyncPushSolutions al = new AsyncPushSolutions
+            AsyncPushSolutions asyncPushSolutions = new AsyncPushSolutions
             {
                 FoldersWithSolutions = foldersWithSolutions,
                 Release = release,
@@ -151,7 +151,7 @@ public partial class ApsHelper : ApsPluginStatic
             if (cmd)
             {
                 await
-                CheckForPushInThread(al, psInvoke, eVs, pathGetMessagesFromGitOutput);
+                CheckForPushInThread(asyncPushSolutions, psInvoke, eVs, pathGetMessagesFromGitOutput);
             }
             else
             {

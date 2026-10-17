@@ -35,17 +35,17 @@ public partial class ApsHelper : ApsPluginStatic
             //string localPath = SH.PostfixIfNotEmpty(DefaultPaths.eVsProjects, "\\");
             var list = SHGetLines.GetLines(gitBashCommands);
             CA.Trim(list);
-            for (int i = 0; i < list.Count; i++)
+            for (int index = 0; index < list.Count; index++)
             {
-                var line = list[i];
+                var line = list[index];
                 if (line.StartsWith("cd "))
                 {
                     var parts = SHSplit.Split(line, vpsPath);
                     var pathParts = SHSplit.SplitChar(parts[1], '\\');
                     var slnName = pathParts[0].TrimEnd('"');
                     var sfo = SolutionsIndexerHelper.SolutionWithName(slnName);
-                    var dn = FS.GetDirectoryName(sfo!.FullPathFolder);
-                    list[i] = list[i].Replace(vpsPath, dn);
+                    var directoryName = FS.GetDirectoryName(sfo!.FullPathFolder);
+                    list[index] = list[index].Replace(vpsPath, directoryName);
                 }
             }
 

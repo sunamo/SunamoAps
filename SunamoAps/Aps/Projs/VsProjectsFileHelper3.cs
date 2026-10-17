@@ -18,17 +18,17 @@ public partial class VsProjectsFileHelper
         ReplaceProjectTemplateParameter(ref count, VsProjectTemplateParameters.targetframeworkversion, "4.7.2");
         var list = SHGetLines.GetLines(count);
         string? trimmedLine = null;
-        for (int i = list.Count - 1; i >= 0; i--)
+        for (int index = list.Count - 1; index >= 0; index--)
         {
-            trimmedLine = list[i].Trim();
+            trimmedLine = list[index].Trim();
             if (trimmedLine.StartsWith("$if$") || trimmedLine.StartsWith("$endif"))
             {
-                list.RemoveAt(i);
+                list.RemoveAt(index);
                 continue;
             }
             if (trimmedLine == "<Compile Include=\"Class1.cs\" />" || trimmedLine == "<Compile Include=\"Properties\\AssemblyInfo.cs\" />")
             {
-                list.RemoveAt(i);
+                list.RemoveAt(index);
                 continue;
             }
         }

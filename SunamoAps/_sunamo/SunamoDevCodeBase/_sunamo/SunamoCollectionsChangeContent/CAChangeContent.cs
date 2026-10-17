@@ -15,11 +15,11 @@ internal class CAChangeContent
             }
             if (args.RemoveEmpty)
             {
-                for (int i = list.Count - 1; i >= 0; i--)
+                for (int index = list.Count - 1; index >= 0; index--)
                 {
-                    if (list[i].Trim() == string.Empty)
+                    if (list[index].Trim() == string.Empty)
                     {
-                        list.RemoveAt(i);
+                        list.RemoveAt(index);
                     }
                 }
             }
@@ -33,9 +33,9 @@ internal class CAChangeContent
     /// </summary>
     internal static List<string> ChangeContent0(ChangeContentArgsDC args, List<string> list, Func<string, string> func)
     {
-        for (int i = 0; i < list.Count; i++)
+        for (int index = 0; index < list.Count; index++)
         {
-            list[i] = func.Invoke(list[i]);
+            list[index] = func.Invoke(list[index]);
         }
         RemoveNullOrEmpty(args, list);
         return list;
@@ -47,9 +47,9 @@ internal class CAChangeContent
     /// </summary>
     internal static List<string> ChangeContentSwitch12<Arg1>(List<string> list, Func<Arg1, string, string> func, Arg1 argument)
     {
-        for (int i = 0; i < list.Count; i++)
+        for (int index = 0; index < list.Count; index++)
         {
-            list[i] = func.Invoke(argument, list[i]);
+            list[index] = func.Invoke(argument, list[index]);
         }
         return list;
     }
@@ -68,9 +68,9 @@ internal class CAChangeContent
         }
         else
         {
-            for (int i = 0; i < list.Count; i++)
+            for (int index = 0; index < list.Count; index++)
             {
-                list[i] = func.Invoke(list[i], argument);
+                list[index] = func.Invoke(list[index], argument);
             }
         }
         RemoveNullOrEmpty(args, list);

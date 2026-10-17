@@ -7,11 +7,11 @@ public interface IProgressBarDC
     /// <summary>
     /// Init.
     /// </summary>
-    void Init(IPercentCalculatorDC pc);
+    void Init(IPercentCalculatorDC percentCalculator);
     /// <summary>
     /// Init.
     /// </summary>
-    void Init(IPercentCalculatorDC pc, bool isNotUt);
+    void Init(IPercentCalculatorDC percentCalculator, bool isNotUt);
     /// <summary>
     /// Done one.
     /// </summary>
