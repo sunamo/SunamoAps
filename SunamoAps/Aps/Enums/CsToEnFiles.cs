@@ -42,11 +42,9 @@ public enum CsToEnFiles
     _CodeFragment,
     _Consts,
     _NumberOnSides,
-    // var b = "{0}"; return $"c {b}";
     _StringInterpolation,
     // dont know purpose
     _EncodedQuote,
-    // return sess.i18n(XlfKeys.HelloWorld);
     _AlreadyTranslated,
     _LeadingTrailing,
 

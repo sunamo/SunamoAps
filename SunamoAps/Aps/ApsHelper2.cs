@@ -32,7 +32,6 @@ public partial class ApsHelper : ApsPluginStatic
         if (pushSolutionsData.onlyThese != VpsHelperDevCode.ListVpsNew)
         {
             string vpsPath = eVs;
-            //string localPath = SH.PostfixIfNotEmpty(DefaultPaths.eVsProjects, "\\");
             var list = SHGetLines.GetLines(gitBashCommands);
             CA.Trim(list);
             for (int index = 0; index < list.Count; index++)
@@ -50,7 +49,6 @@ public partial class ApsHelper : ApsPluginStatic
             }
 
             // Exists FS.WithEndSlash but there could be better
-            //gitBashCommands = gitBashCommands.Replace(vpsPath, localPath);
             gitBashCommands = SHJoin.JoinNL(list);
         }
 
@@ -59,7 +57,6 @@ public partial class ApsHelper : ApsPluginStatic
         if (!cmd)
         {
             MoveToApsWpf();
-        //WindowHelper.Close(windowWithUserControl);
         }
         else
         {
@@ -194,9 +191,6 @@ public partial class ApsHelper : ApsPluginStatic
     // Return without ../
     // Get relative path to A2 without solution base folder
     //
-    // A1 = Scripts_Project
-    // A2 = E:\vs\Projects\PlatformIndependentNuGetPackages\dll\HtmlAgilityPack.dll
-    // Result = sunamo\dll\HtmlAgilityPack.dll
     public string GetRelativePathFromSolution(SolutionFolder sln, string fullPathCsproj)
     {
         GetProjectFolderAndSlnPath(sln, Instance.DetectDocumentsFolder(sln));

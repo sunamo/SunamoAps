@@ -40,7 +40,6 @@ public class VsProjectFile
                 ? dictToAvoidCollectionWasChanged[file]
                 : null;
         }
-        //xDocument = await XmlDocumentsCache.GetAsync(file);
     }
     public VsProjectFile()
     {
@@ -51,38 +50,11 @@ public class VsProjectFile
         // async ctor nejde. proto to už nikdy nemůžu načítat v ctoru
         // už navždy budu užívat jen .net core
         Load(file, null).RunSynchronously();
-        //var content = TF.ReadAllText(file);
-        //IsCore = VsProjectsFileHelper.IsCore(content);
-        //holder = new XmlNamespacesHolder();
-        //holder.ParseAndRemoveNamespacesXmlDocument(content);
-        //xDocument = XmlHelper.CreateXmlDocument(content);
-        //XmlHelper.AddXmlNamespaces(holder.NamespaceManager);
     }
     public bool IsValidXml => xDocument != null;
     #region TODO: working with XmlDocument which is not supported already
-    //XmlDocument xd = null;
-    //public VsProjectFile(string pathOrXml)
-    //{
-    //    xd = new XmlDocument();
-    //    if (FS.ExistsFile(pathOrXml))
-    //    {
-    //        xd.Load(pathOrXml);
-    //    }
-    //    else
-    //    {
-    //        xd.LoadXml(pathOrXml);
-    //    }
-    //}
-    //public VsProjectFile(XmlDocument xd, XmlNamespacesHolder holder)
-    //{
-    //    this.xd = xd;
-    //    this.holder = holder;
-    //}
     #endregion
 
-    //public void SetToItemGroup(ItemGroups ig, List<XmlNode> old, List<XmlNode> n)
-    //{
-    //}
     public static XmlNode GetElementOfName(XmlNode element, string name)
     {
         return element.ChildNodes.First(name);

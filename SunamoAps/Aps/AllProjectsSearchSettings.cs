@@ -4,7 +4,6 @@ internal static partial class AllProjectsSearchSettings
 {
     static string? fileNotTranslate = null;
     //
-    //static List<string> dontReplaceReferencesIn = null;
     internal static List<string>? DontReplaceReferencesIn { get; set; } = null;
     internal static
     async Task<List<string>>

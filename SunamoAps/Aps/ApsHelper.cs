@@ -45,7 +45,6 @@ public partial class ApsHelper : ApsPluginStatic
     public async Task PushSolutionsContinuouslyWindow_ChangeDialogResult(bool? builder, Func<List<string>, Task<List<List<string>>>> psInvoke, string eVs, string pathGetMessagesFromGitOutput)
     {
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult");
-        //string gitBashBuilderS = null;
         bool release = true;
         gitPullVps.Clear();
         GitBashBuilder gitBashBuilder = new GitBashBuilder(new TextBuilderDC());
@@ -53,7 +52,6 @@ public partial class ApsHelper : ApsPluginStatic
         {
             string pushArgs = "";
             // instead of this add print errors. with force I can lose my data
-            //pushArgs = " -f";
             string? commitMessage = null;
             if (cmd)
             {
@@ -62,7 +60,6 @@ public partial class ApsHelper : ApsPluginStatic
             else
             {
                 MoveToApsWpf();
-            //commitMessage = pushSolutionsContinuouslyUC.txt1.Text;
             }
 
             GitBashBuilder gitStatus = new GitBashBuilder(new TextBuilderDC());
@@ -97,28 +94,10 @@ public partial class ApsHelper : ApsPluginStatic
                     if (isCs)
                     {
 #region MyRegion
-                    //cs = sln.FullPathFolder.Contains(@"\Projects\");
-                    //if (cs != pushSolutionsData.cs.Value)
-                    //{
-                    //    continue;
-                    //}
-                    //if (cs)
-                    //{
-                    //    if (sln.FullPathFolder.Contains("_"))
-                    //    {
-                    //        continue;
-                    //    }
-                    //}
-                    //if (sln.NameSolution != "sunamo64")
-                    //{
-                    //    continue;
-                    //}
 #endregion
                     }
 
                     // Include also github, solutions which isnt mine return 403
-                    //if (!sln.InVsFolder)
-                    //{
                     push = true;
                     if (pushSolutionsData.onlyThese != null)
                     {
@@ -159,21 +138,14 @@ public partial class ApsHelper : ApsPluginStatic
 #region New
             //                await
             //#endif
-            //                CheckForPushInThread(al);
 #endregion
 #region Old
-            //ThisApp.Appeal( "ParameterizedThreadStart before");
-            //ParameterizedThreadStart parameter = new ParameterizedThreadStart(CheckForPushInThread);
-            //Thread temp = new Thread(parameter) { IsBackground = true };
-            //temp.SetApartmentState(ApartmentState.STA);
-            //temp.Start(al);
 #endregion
             }
         }
         else
         {
             MoveToApsWpf();
-        //windowWithUserControl.Close();
         }
 
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult end");

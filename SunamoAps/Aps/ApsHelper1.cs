@@ -30,16 +30,11 @@ public partial class ApsHelper : ApsPluginStatic
         }
 
         var gitBashBuilderS = asyncPushSolutions.GitBashBuilder.ToString();
-        //gitBashBuilderS = "abc";
         if (!string.IsNullOrWhiteSpace(gitBashBuilderS) || !asyncPushSolutions.Release)
         {
-            //gitBashBuilderS = gitBashBuilder.ToString();
-            //gitBashBuilderS = TF.ReadAllText(@"D:\Desktop\gitOutput.txt");
             ClipboardService.SetText(gitBashBuilderS);
-            //LoginUc enterOutputOfPowershellGit = new LoginUc();
             pushSolutionsData.checkForGit = GitTypesOfMessages.fatal | GitTypesOfMessages.error;
             await ShowWindowForEnterOutputOfPowershell(gitBashBuilderS, true, eVs, pathGetMessagesFromGitOutput);
-        //uc.Accept(gitBashBuilderS);
         }
         else
         {
@@ -82,20 +77,6 @@ public partial class ApsHelper : ApsPluginStatic
         else
         {
             MoveToApsWpf();
-        //enterOneValueUC = new EnterOneValueUC("output of powershell");
-        //enterOneValueUC.txtEnteredText.AcceptsReturn = true;
-        //enterOneValueUC.txtEnteredText.Text = string.Empty;
-        //enterOneValueUC.txtEnteredText.TextWrapping = TextWrapping.Wrap;
-        //enterOneValueUC.txtEnteredText.Height = 400;
-        //enterOneValueUC.txtEnteredText.Width = 400;
-        //SuMenuItem miCopyToClipboard = new SuMenuItem();
-        //miCopyToClipboard.Header = "Copy git commands to clipboard";
-        //miCopyToClipboard.Click += MiCopyToClipboard_Click;
-        //miCopyToClipboard.Tag = gitBashBuilder;
-        //enterOneValueUC.suSuMenuItems.Add(miCopyToClipboard);
-        //enterOutputOfPowershellGitWindow = new WindowWithUserControl(enterOneValueUC, ResizeMode.CanResize, false, "enterOutputOfPowershellGit");
-        //enterOneValueUC.ChangeDialogResult += EnterOutputOfPowershellGit_ChangeDialogResult;
-        //enterOutputOfPowershellGitWindow.ShowDialog();
         }
     }
 
@@ -155,7 +136,6 @@ public partial class ApsHelper : ApsPluginStatic
             //#endif
             if (string.IsNullOrEmpty(typed))
             {
-                //var pathGetMessagesFromGitOutput = @"D:\_Test\AllProjectsSearch\AllProjectsSearch\SearchInSolutionsUC\GetMessagesFromGitOutput.txt";
                 FS.CreateUpfoldersPsysicallyUnlessThere(pathGetMessagesFromGitOutput);
                 typed =
     await
@@ -165,20 +145,9 @@ public partial class ApsHelper : ApsPluginStatic
         else
         {
             MoveToApsWpf();
-        //typed = enterOutputOfPowershellGit.txtEnteredText.Text;
         }
 
         var lines = SHGetLines.GetLines(typed!);
-        //const string storingIndexDone = "remote: Storing index... done";
-        //const string m2m = "master -> master";
-        //for (int i = lines.Count - 1; i >= 0; i--)
-        //{
-        //    if (lines[i].Contains(m2m))
-        //    {
-        //        //lines.Insert(i, "fatal: femme fatale");
-        //        break;
-        //    }
-        //}
         var badSolutions = GetMessagesFromGitOutput(shouldProcessMessages, ref lines, pushSolutionsData.checkForGit, eVs);
         return badSolutions;
     }

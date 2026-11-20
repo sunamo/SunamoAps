@@ -17,13 +17,11 @@ public partial class VsProjectsFileHelper
     }
     #region Use cacheProjectReferences
     public static Dictionary<string, ProjectReferences> cacheProjectReferences = new Dictionary<string, ProjectReferences>();
-    //public async static Task<ProjectReferences> GetProjectReferencesAsync(string csprojPath, UriKind uri = UriKind.Absolute)
     public static
         async Task<ProjectReferences>
         GetProjectReferences(string csprojPath, Dictionary<string, XmlDocument> dictToAvoidCollectionWasChanged, UriKind uriKind = UriKind.Absolute)
     {
         // Not
-        //ThrowEx.FirstLetterIsNotUpper(csprojPath);
         csprojPath = SH.FirstCharUpper(csprojPath);
         if (cacheProjectReferences.ContainsKey(csprojPath))
         {
