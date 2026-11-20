@@ -3,7 +3,7 @@ namespace SunamoAps.Aps.Projs;
 public partial class VsProjectsFileHelper
 {
     static Type type = typeof(VsProjectsFileHelper);
-    #region Bez používání externích knihoven
+    #region Without using external libraries
     /// <summary>
     /// Return paths of all csprojs
     /// </summary>
