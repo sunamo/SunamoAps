@@ -15,7 +15,7 @@ internal static partial class AllProjectsSearchSettings
             DontReplaceReferencesIn =
     await
  TF.ReadAllLines(fileName);
-            // Inlined from SF.RemoveComments - odstraňuje prázdné řádky a řádky začínající '#'
+            // Inlined from SF.RemoveComments - removes empty lines and lines starting with '#'
             DontReplaceReferencesIn = DontReplaceReferencesIn!.Where(line => !string.IsNullOrWhiteSpace(line) && !line.StartsWith("#")).ToList();
         }
         return DontReplaceReferencesIn;

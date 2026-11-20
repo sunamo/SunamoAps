@@ -10,7 +10,7 @@ internal class SunamoDevCodeHelper
     {
         var list = VisualStudioTempFseWrapped.FoldersInSolutionToDelete;
 
-        // todo list je zde List<string>, chce jen string, později to analyzovat
+        // todo list here is List<string>, it wants only string, analyze later
 
         //As foldersInProjectToDelete dont have contains WildCard, set false
         CA.RemoveWhichContainsList(files, list, false);

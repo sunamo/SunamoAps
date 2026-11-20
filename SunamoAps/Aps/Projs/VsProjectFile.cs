@@ -47,8 +47,8 @@ public class VsProjectFile
     // Before calling must check whether file is exists
     public VsProjectFile(string file)
     {
-        // async ctor nejde. proto to už nikdy nemůžu načítat v ctoru
-        // už navždy budu užívat jen .net core
+        // async ctor is not possible. that is why I can never load this in the ctor again
+        // from now on I will use only .net core forever
         Load(file, null).RunSynchronously();
     }
     public bool IsValidXml => xDocument != null;

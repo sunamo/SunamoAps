@@ -3,12 +3,12 @@ namespace SunamoAps.Aps.Enums;
 public enum SolutionNameMustContains
 {
     Text,
-    // Není možné použít, v první fázi se zjistí projekty které by mohli být potenciálně duplicitní. V druhé
+    // Not possible to use, in the first phase the projects that could potentially be duplicates are determined. In the second
     SameNameWithDiacritic,
     // FS.GetNameWithoutSeries
     Serie,
     // SH.EndsWithNumber, SHTrim.TrimTrailingNumbersAtEnd
     NumberAtEnd,
-    // Berou se všechny projekty
+    // All projects are taken
     None
 }
