@@ -2,6 +2,9 @@
 
 // Filter for C# files with configurable filtering rules
 // Cannot be derived from FiltersNotTranslateAble to make finding instances of CsFileFilter easier
+/// <summary>
+/// Represents the cs file filter type.
+/// </summary>
 public partial class CsFileFilter : ICsFileFilter
 {
     private static bool? _returnValue;
@@ -108,17 +111,41 @@ public partial class CsFileFilter : ICsFileFilter
         return true;
     }
 
+    /// <summary>
+    /// Represents the contains type.
+    /// </summary>
     public class Contains
     {
+        /// <summary>
+        /// The obj fp.
+        /// </summary>
         public static string objFp = @"\obj\";
+        /// <summary>
+        /// The bin fp.
+        /// </summary>
         public static string binFp = @"\bin\";
+        /// <summary>
+        /// The tilda RF fp.
+        /// </summary>
         public static string tildaRFFp = "~RF";
     }
 
+    /// <summary>
+    /// Represents the contains args type.
+    /// </summary>
     public class ContainsArgs
     {
+        /// <summary>
+        /// The bin fp.
+        /// </summary>
         public bool binFp;
+        /// <summary>
+        /// The obj fp.
+        /// </summary>
         public bool objFp;
+        /// <summary>
+        /// The tilda RF.
+        /// </summary>
         public bool tildaRF;
         // false which not to index, true which to index
         /// <summary>
@@ -132,17 +159,50 @@ public partial class CsFileFilter : ICsFileFilter
         }
     }
 
+    /// <summary>
+    /// Represents the end type.
+    /// </summary>
     public class End
     {
+        /// <summary>
+        /// The not translate able pp constant.
+        /// </summary>
         public const string NotTranslateAblePp = "NotTranslateAble";
+        /// <summary>
+        /// The designer cs pp constant.
+        /// </summary>
         public const string designerCsPp = ".designer.cs";
+        /// <summary>
+        /// The designer cs pp constant.
+        /// </summary>
         public const string DesignerCsPp = ".Designer.cs";
+        /// <summary>
+        /// The xaml cs pp constant.
+        /// </summary>
         public const string xamlCsPp = ".xaml.cs";
+        /// <summary>
+        /// The shared cs pp constant.
+        /// </summary>
         public const string sharedCsPp = "Shared.cs";
+        /// <summary>
+        /// The i cs pp constant.
+        /// </summary>
         public const string iCsPp = ".i.cs";
+        /// <summary>
+        /// The g i cs pp constant.
+        /// </summary>
         public const string gICsPp = ".g.i.cs";
+        /// <summary>
+        /// The g cs pp constant.
+        /// </summary>
         public const string gCsPp = ".g.cs";
+        /// <summary>
+        /// The tmp pp constant.
+        /// </summary>
         public const string tmpPp = ".tmp";
+        /// <summary>
+        /// The TMP pp constant.
+        /// </summary>
         public const string TMPPp = ".TMP";
     }
 }

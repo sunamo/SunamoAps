@@ -18,6 +18,12 @@ public partial class VsProjectsFileHelper
     }
 
     // This method has been moved to SunamoMicrosoftBuild.
+    /// <summary>
+    /// Set target frameworks uap.
+    /// </summary>
+    /// <param name="csprojPath">The csproj path.</param>
+    /// <param name="targetFramework">The target framework.</param>
+    /// <param name="minFramework">The min framework.</param>
     public static void SetTargetFrameworksUap(string csprojPath, string targetFramework, string minFramework)
     {
         throw new NotImplementedException();

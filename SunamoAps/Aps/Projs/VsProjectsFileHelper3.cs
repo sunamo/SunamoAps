@@ -4,6 +4,11 @@ public partial class VsProjectsFileHelper
 {
     const string sdkAttrName = "Sdk";
     // Creates a new vsproj for me from the VS2019 template
+    /// <summary>
+    /// Xml class library from template.
+    /// </summary>
+    /// <param name="safeProjectName">The safe project name.</param>
+    /// <returns>The xml class library from template result.</returns>
     public static
         async Task<string>
         XmlClassLibraryFromTemplate(string safeProjectName)

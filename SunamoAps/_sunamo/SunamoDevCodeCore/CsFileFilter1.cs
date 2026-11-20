@@ -3,17 +3,50 @@
 // Cant be derived from FiltersNotTranslateAble because easy of finding instances of CsFileFilter
 public partial class CsFileFilter : ICsFileFilter
 {
+    /// <summary>
+    /// Represents the end args type.
+    /// </summary>
     public class EndArgs
     {
+        /// <summary>
+        /// The designer cs.
+        /// </summary>
         public bool designerCs;
+        /// <summary>
+        /// The designer cs.
+        /// </summary>
         public bool DesignerCs;
+        /// <summary>
+        /// The g cs.
+        /// </summary>
         public bool gCs;
+        /// <summary>
+        /// The g i cs.
+        /// </summary>
         public bool gICs;
+        /// <summary>
+        /// The i cs.
+        /// </summary>
         public bool iCs;
+        /// <summary>
+        /// The not translate able.
+        /// </summary>
         public bool notTranslateAble;
+        /// <summary>
+        /// The shared cs.
+        /// </summary>
         public bool sharedCs;
+        /// <summary>
+        /// The tmp.
+        /// </summary>
         public bool tmp;
+        /// <summary>
+        /// The TMP.
+        /// </summary>
         public bool TMP;
+        /// <summary>
+        /// The xaml cs.
+        /// </summary>
         public bool xamlCs;
         // false which not to index, true which to index
         /// <summary>

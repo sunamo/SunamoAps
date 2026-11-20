@@ -3,6 +3,11 @@ namespace SunamoAps.Aps.Projs;
 // Use VsProjectFile,
 public partial class VsProjectsFileHelper
 {
+    /// <summary>
+    /// Get tokens.
+    /// </summary>
+    /// <param name="relativePath">The relative path.</param>
+    /// <returns>The get tokens result.</returns>
     public static List<string> GetTokens(string relativePath)
     {
         var deli = "";
@@ -16,7 +21,17 @@ public partial class VsProjectsFileHelper
         return SHSplit.Split(relativePath, deli);
     }
     #region Use cacheProjectReferences
+    /// <summary>
+    /// The cache project references.
+    /// </summary>
     public static Dictionary<string, ProjectReferences> cacheProjectReferences = new Dictionary<string, ProjectReferences>();
+    /// <summary>
+    /// Get project references.
+    /// </summary>
+    /// <param name="csprojPath">The csproj path.</param>
+    /// <param name="dictToAvoidCollectionWasChanged">The dict to avoid collection was changed.</param>
+    /// <param name="uriKind">The uri kind.</param>
+    /// <returns>The get project references result.</returns>
     public static
         async Task<ProjectReferences>
         GetProjectReferences(string csprojPath, Dictionary<string, XmlDocument> dictToAvoidCollectionWasChanged, UriKind uriKind = UriKind.Absolute)
@@ -57,6 +72,13 @@ public partial class VsProjectsFileHelper
         return projectReferencesResult;
     }
     #endregion
+    /// <summary>
+    /// Add files to csproj.
+    /// </summary>
+    /// <param name="sln">The sln.</param>
+    /// <param name="csprojpath">The csprojpath.</param>
+    /// <param name="files">The files.</param>
+    /// <returns>The add files to csproj result.</returns>
     public static async Task AddFilesToCsproj(SolutionFolder sln, string csprojpath, List<string> files)
     {
         var containedFiles = new List<string>();
