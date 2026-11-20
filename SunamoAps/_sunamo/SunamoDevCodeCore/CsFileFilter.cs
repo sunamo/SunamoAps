@@ -1,7 +1,6 @@
 ﻿namespace SunamoAps._sunamo.SunamoDevCodeCore;
 
-// EN: Filter for C# files with configurable filtering rules
-// CZ: Filtr pro C# soubory s konfigurovatelными pravidly filtrování
+// Filter for C# files with configurable filtering rules
 // Cannot be derived from FiltersNotTranslateAble to make finding instances of CsFileFilter easier
 public partial class CsFileFilter : ICsFileFilter
 {
