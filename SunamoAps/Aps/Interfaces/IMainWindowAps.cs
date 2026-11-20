@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoAps;
 
 public interface IMainWindowAps

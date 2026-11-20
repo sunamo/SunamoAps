@@ -1,6 +1,5 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoGitBashBuilder;
 
-// Variable names have been checked and replaced with self-descriptive names
 public partial class GitBashBuilder : IGitBashBuilder
 {
 

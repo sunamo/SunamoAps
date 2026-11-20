@@ -1,4 +1,3 @@
-// variables names: ok
 public interface IMoveToShared
 {
     string Folder { get; }

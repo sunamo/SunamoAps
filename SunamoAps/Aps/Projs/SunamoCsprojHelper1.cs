@@ -1,6 +1,5 @@
 namespace SunamoAps.Aps.Projs;
 
-// Variable names have been checked and replaced with self-descriptive names
 public partial class SunamoCsprojHelper
 {
     public static Type type = typeof(SunamoCsprojHelper);

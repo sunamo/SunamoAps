@@ -1,6 +1,4 @@
-﻿// variables names: ok
-// Variable names have been checked and replaced with self-descriptive names
-namespace SunamoAps._sunamo.SunamoSolutionsIndexer;
+﻿namespace SunamoAps._sunamo.SunamoSolutionsIndexer;
 
 internal class SolutionsIndexerPaths
 {
