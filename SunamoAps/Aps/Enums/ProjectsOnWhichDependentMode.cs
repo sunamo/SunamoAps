@@ -4,6 +4,5 @@ namespace SunamoAps.Aps.Enums;
 public enum ProjectsOnWhichDependentMode
 {
     UsedKeysInFolder,
-    Files,
-    ReplaceStringKeysWithXlfKeys
+    Files
 }
