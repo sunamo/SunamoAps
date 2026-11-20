@@ -82,7 +82,6 @@ global using SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoData.Data;
 global using SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoEnums.Enums;
 global using SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoCollectionOnDrive.Args;
 global using SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoInterfaces.Interfaces;
-global using SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoI18N;
 global using SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoLang.SunamoXlf;
 global using SunamoAps._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer.Data.SolutionFolderNs;
 global using SunamoAps._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer.Data.SolutionFoldersNs;
