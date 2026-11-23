@@ -1,7 +1,5 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoFileSystem;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 internal partial class FS
 {
     /// <summary>
@@ -190,7 +188,7 @@ internal partial class FS
     {
         if (!path.StartsWith(@"\\?\"))
         {
-        // V ASP.net mi vrátilo u každé directory.exists false. Byl jsem pod ApplicationPoolIdentity v IIS a bylo nastaveno Full Control pro IIS AppPool\DefaultAppPool
+        // In ASP.net Directory.Exists returned false for every directory. I was under ApplicationPoolIdentity in IIS and Full Control was set for IIS AppPool\DefaultAppPool
         }
 
         return path;

@@ -1,5 +1,8 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._public.SunamoGitBashBuilder;
 
+/// <summary>
+/// Represents the git bash builder type.
+/// </summary>
 public partial class GitBashBuilder : IGitBashBuilder
 {
     /// <summary>
@@ -182,6 +185,9 @@ public partial class GitBashBuilder : IGitBashBuilder
         Git("checkout");
         AppendLine(arg);
     }
+    /// <summary>
+    /// Gets or sets the string builder.
+    /// </summary>
     public TextBuilderDC StringBuilder { get; set; } = null!;
     /// <summary>
     /// Initializes a new instance of GitBashBuilder.
@@ -191,6 +197,12 @@ public partial class GitBashBuilder : IGitBashBuilder
         this.StringBuilder = stringBuilder;
     }
 
+    /// <summary>
+    /// Gets or sets the git for debug.
+    /// </summary>
     public bool GitForDebug { get; set; } = false;
+    /// <summary>
+    /// Gets the commands.
+    /// </summary>
     public List<string> Commands { get => SHGetLines.GetLines(ToString()); }
 }

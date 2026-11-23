@@ -1,8 +1,14 @@
 ﻿namespace SunamoAps._sunamo.SunamoDevCodeBase;
 
 // Checking whether string is already contained.
+/// <summary>
+/// Represents the ppk on drive DC type.
+/// </summary>
 public class PpkOnDriveDC : PpkOnDriveDevCodeBase<string>
 {
+    /// <summary>
+    /// Gets or sets the remove duplicates.
+    /// </summary>
     public bool RemoveDuplicates { get; set; } = false;
 
     /// <summary>
@@ -39,10 +45,8 @@ public class PpkOnDriveDC : PpkOnDriveDevCodeBase<string>
             AddRange(SHGetLines.GetLines(
                 await
                     FileAsync.ReadAllTextAsync(args.File)));
-            //CA.RemoveStringsEmpty2(this);
             if (RemoveDuplicates)
             {
-                //CAG.RemoveDuplicitiesList<string>(this);
                 var data = this.ToList();
                 await Clear();
                 data = data.Distinct().ToList();

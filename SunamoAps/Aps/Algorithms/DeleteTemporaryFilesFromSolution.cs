@@ -1,7 +1,15 @@
 namespace SunamoAps.Aps.Algorithms;
 
+/// <summary>
+/// Represents the delete temporary files from solution type.
+/// </summary>
 public class DeleteTemporaryFilesFromSolution
 {
+    /// <summary>
+    /// Delete folder with temporary moved files.
+    /// </summary>
+    /// <param name="folderWithTemporaryMovedContentWithoutBackslash">The folder with temporary moved content without backslash.</param>
+    /// <returns>The delete folder with temporary moved files result.</returns>
     public static bool DeleteFolderWithTemporaryMovedFiles(string folderWithTemporaryMovedContentWithoutBackslash)
     {
         if (FS.ExistsDirectory(folderWithTemporaryMovedContentWithoutBackslash))
@@ -21,6 +29,15 @@ public class DeleteTemporaryFilesFromSolution
         return true;
     }
 
+    /// <summary>
+    /// Clear solution.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="solutionFolder">The solution folder.</param>
+    /// <param name="delete">The delete.</param>
+    /// <param name="folderWithTemporaryMovedContentWithoutBackslash">The folder with temporary moved content without backslash.</param>
+    /// <param name="keepPackageJson">The keep package json.</param>
+    /// <returns>The clear solution result.</returns>
     public static List<string> ClearSolution(ILogger logger, string solutionFolder, bool delete, string folderWithTemporaryMovedContentWithoutBackslash, bool keepPackageJson = false)
     {
         string folderWithProjectsFolders = FS.GetDirectoryName(solutionFolder);
@@ -85,6 +102,14 @@ public class DeleteTemporaryFilesFromSolution
         return foundFiles;
     }
 
+    /// <summary>
+    /// Clear project.
+    /// </summary>
+    /// <param name="logger">The logger.</param>
+    /// <param name="project">The project.</param>
+    /// <param name="delete">The delete.</param>
+    /// <param name="folderWithTemporaryMovedContentWithoutBackslash">The folder with temporary moved content without backslash.</param>
+    /// <returns>The clear project result.</returns>
     public static List<string> ClearProject(ILogger logger, string project, bool delete, string folderWithTemporaryMovedContentWithoutBackslash)
     {
         var foundFiles = FSGetFiles.GetFiles(logger, project, true);

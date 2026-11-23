@@ -1,5 +1,8 @@
 namespace SunamoAps._sunamo.SunamoSolutionsIndexer.SunamoSolutionsIndexer;
 
+/// <summary>
+/// Represents the i folders with solutions type.
+/// </summary>
 public interface IFoldersWithSolutions
 {
     /// <summary>

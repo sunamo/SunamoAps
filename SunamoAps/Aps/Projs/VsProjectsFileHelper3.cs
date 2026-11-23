@@ -3,7 +3,12 @@ namespace SunamoAps.Aps.Projs;
 public partial class VsProjectsFileHelper
 {
     const string sdkAttrName = "Sdk";
-    // Vytvoří mi nový vsproj z templaty VS2019
+    // Creates a new vsproj for me from the VS2019 template
+    /// <summary>
+    /// Xml class library from template.
+    /// </summary>
+    /// <param name="safeProjectName">The safe project name.</param>
+    /// <returns>The xml class library from template result.</returns>
     public static
         async Task<string>
         XmlClassLibraryFromTemplate(string safeProjectName)

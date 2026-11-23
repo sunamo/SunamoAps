@@ -5,6 +5,13 @@ public partial class VsProjectsFileHelper
     // Adds an ItemGroup element to an SDK-style .csproj file.
     // Used in: MoveClassElementIntoSharedFileUC, AddFilesToCsproj.
     // Works with pure XML classes, primarily for Compile tags.
+    /// <summary>
+    /// Add item group sdk style.
+    /// </summary>
+    /// <param name="csprojPath">The csproj path.</param>
+    /// <param name="itemGroups">The item groups.</param>
+    /// <param name="itemGroupElement">The item group element.</param>
+    /// <param name="isWritingToStorage">The is writing to storage.</param>
     public static
             async Task
                 AddItemGroupSdkStyle(string csprojPath, ItemGroups itemGroups, ItemGroupElement itemGroupElement, bool isWritingToStorage)

@@ -1,8 +1,17 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._public;
 
+/// <summary>
+/// Represents the i percent calculator DC type.
+/// </summary>
 public interface IPercentCalculatorDC
 {
+    /// <summary>
+    /// Gets or sets the overall sum.
+    /// </summary>
     double OverallSum { get; set; }
+    /// <summary>
+    /// Gets or sets the last.
+    /// </summary>
     double Last { get; set; }
     /// <summary>
     /// Create.

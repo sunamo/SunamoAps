@@ -1,7 +1,5 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._sunamo.SunamoFileSystem;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 internal partial class FS
 {
     /// <summary>
@@ -9,11 +7,10 @@ internal partial class FS
     /// </summary>
     internal static bool CopyMoveFilePrepare(ref string item, ref string fileTo, FileMoveCollisionOptionDC collisionOption)
     {
-        //var fileTo = fileTo2.ToString();
         item = @"\\?\" + item;
         MakeUncLongPath(ref fileTo);
         CreateUpfoldersPsysicallyUnlessThere(fileTo);
-        // Toto tu je důležité, nevím který kokot to zakomentoval
+        // This is important here, I do not know who commented it out
         if (File.Exists(fileTo))
         {
             if (collisionOption == FileMoveCollisionOptionDC.AddFileSize)
@@ -97,7 +94,6 @@ internal partial class FS
             }
             catch (Exception)
             {
-            //ThisApp.Error(item + " : " + ex.Message);
             }
     }
 
@@ -193,7 +189,6 @@ internal partial class FS
             stringBuilder.Append(jumpUp);
         stringBuilder.Append(file);
         return stringBuilder.ToString();
-    //return SHJoin.JoinTimes(i, jumpUp) + file;
     }
 
     /// <summary>
@@ -234,7 +229,6 @@ internal partial class FS
     internal static void CreateFoldersPsysicallyUnlessThere(string path)
     {
         ThrowEx.IsNullOrEmpty(nameof(path), path);
-        //ThrowEx.IsNotWindowsPathFormat(nameof(path), path);
         if (Directory.Exists(path))
         {
             return;

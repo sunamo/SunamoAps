@@ -1,10 +1,17 @@
 namespace SunamoAps.Aps.Enums;
 
-// EN: All operations defined here are performed in a single method
-// CZ: Všechny operace co jsou zde se dělají v jediné metodě
+// All operations defined here are performed in a single method
+/// <summary>
+/// Represents the projects on which dependent mode type.
+/// </summary>
 public enum ProjectsOnWhichDependentMode
 {
+    /// <summary>
+    /// The used keys in folder value.
+    /// </summary>
     UsedKeysInFolder,
-    Files,
-    ReplaceStringKeysWithXlfKeys
+    /// <summary>
+    /// The files value.
+    /// </summary>
+    Files
 }

@@ -1,15 +1,28 @@
 namespace SunamoAps.Aps;
 
+/// <summary>
+/// Represents the aps helper type.
+/// </summary>
 public partial class ApsHelper : ApsPluginStatic
 {
+    /// <summary>
+    /// The instance.
+    /// </summary>
     public static ApsHelper Instance = new ApsHelper();
     // Never create new instance, just call method
+    /// <summary>
+    /// The push solutions data.
+    /// </summary>
     public PushSolutionsData pushSolutionsData = new PushSolutionsData();
     string? typed = null;
     bool cmd = false;
     GitBashBuilder gitPullVps = new GitBashBuilder(new TextBuilderDC());
     GitBashBuilder gitPushVps = new GitBashBuilder(new TextBuilderDC());
     // Separates all projects into web and non-web categories. Do not use XmlDocumentsCache.
+    /// <summary>
+    /// Web and non web projects.
+    /// </summary>
+    /// <returns>The web and non web projects result.</returns>
     public static Tuple<List<string>, List<string>> WebAndNonWebProjects(ILogger logger, bool withCsprojs = true)
     {
         List<string> webProjects = new List<string>();
@@ -37,15 +50,25 @@ public partial class ApsHelper : ApsPluginStatic
         return new Tuple<List<string>, List<string>>(webProjects, notWebProjects);
     }
 
+    /// <summary>
+    /// Is web.
+    /// </summary>
+    /// <param name="webProjects">The web projects.</param>
+    /// <param name="notWebProjects">The not web projects.</param>
+    /// <returns>The is web result.</returns>
     public static bool IsWeb(string projectPath)
     {
         return CA.ContainsAnyFromElementBool(projectPath, AllProjectsSearchSettings.DontReplaceReferencesIn!);
     }
 
+    /// <summary>
+    /// Push solutions continuously window change dialog result.
+    /// </summary>
+    /// <param name="projectPath">The project path.</param>
+    /// <returns>The push solutions continuously window change dialog result result.</returns>
     public async Task PushSolutionsContinuouslyWindow_ChangeDialogResult(bool? builder, Func<List<string>, Task<List<List<string>>>> psInvoke, string eVs, string pathGetMessagesFromGitOutput)
     {
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult");
-        //string gitBashBuilderS = null;
         bool release = true;
         gitPullVps.Clear();
         GitBashBuilder gitBashBuilder = new GitBashBuilder(new TextBuilderDC());
@@ -53,7 +76,6 @@ public partial class ApsHelper : ApsPluginStatic
         {
             string pushArgs = "";
             // instead of this add print errors. with force I can lose my data
-            //pushArgs = " -f";
             string? commitMessage = null;
             if (cmd)
             {
@@ -62,7 +84,6 @@ public partial class ApsHelper : ApsPluginStatic
             else
             {
                 MoveToApsWpf();
-            //commitMessage = pushSolutionsContinuouslyUC.txt1.Text;
             }
 
             GitBashBuilder gitStatus = new GitBashBuilder(new TextBuilderDC());
@@ -97,28 +118,10 @@ public partial class ApsHelper : ApsPluginStatic
                     if (isCs)
                     {
 #region MyRegion
-                    //cs = sln.FullPathFolder.Contains(@"\Projects\");
-                    //if (cs != pushSolutionsData.cs.Value)
-                    //{
-                    //    continue;
-                    //}
-                    //if (cs)
-                    //{
-                    //    if (sln.FullPathFolder.Contains("_"))
-                    //    {
-                    //        continue;
-                    //    }
-                    //}
-                    //if (sln.NameSolution != "sunamo64")
-                    //{
-                    //    continue;
-                    //}
 #endregion
                     }
 
                     // Include also github, solutions which isnt mine return 403
-                    //if (!sln.InVsFolder)
-                    //{
                     push = true;
                     if (pushSolutionsData.onlyThese != null)
                     {
@@ -159,26 +162,22 @@ public partial class ApsHelper : ApsPluginStatic
 #region New
             //                await
             //#endif
-            //                CheckForPushInThread(al);
 #endregion
 #region Old
-            //ThisApp.Appeal( "ParameterizedThreadStart before");
-            //ParameterizedThreadStart parameter = new ParameterizedThreadStart(CheckForPushInThread);
-            //Thread temp = new Thread(parameter) { IsBackground = true };
-            //temp.SetApartmentState(ApartmentState.STA);
-            //temp.Start(al);
 #endregion
             }
         }
         else
         {
             MoveToApsWpf();
-        //windowWithUserControl.Close();
         }
 
         ThisApp.Appeal("PushSolutionsContinuouslyWindow_ChangeDialogResult end");
     }
 
+    /// <summary>
+    /// Initializes a new instance of the all projects class.
+    /// </summary>
     public List<string>? AllProjects(ILogger logger, RepositoryLocal vs17, WebNonWeb webNonWeb, bool withCsprojs = true)
     {
         if (vs17 != RepositoryLocal.Vs17)

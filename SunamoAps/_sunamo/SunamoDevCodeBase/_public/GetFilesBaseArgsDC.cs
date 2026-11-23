@@ -1,7 +1,9 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._public;
 
-// EN: Base arguments class for getting files
-// CZ: Základní třída argumentů pro získávání souborů
+// Base arguments class for getting files
+/// <summary>
+/// Represents the get files base args DC type.
+/// </summary>
 public class GetFilesBaseArgsDC /*: GetFoldersEveryFolderArgs - do not inherit - read comment above*/
 {
     internal bool FollowJunctions { get; set; } = false;

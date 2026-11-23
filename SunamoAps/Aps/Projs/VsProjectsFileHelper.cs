@@ -1,9 +1,12 @@
 namespace SunamoAps.Aps.Projs;
 
+/// <summary>
+/// Represents the vs projects file helper type.
+/// </summary>
 public partial class VsProjectsFileHelper
 {
     static Type type = typeof(VsProjectsFileHelper);
-    #region Bez používání externích knihoven
+    #region Without using external libraries
     /// <summary>
     /// Return paths of all csprojs
     /// </summary>

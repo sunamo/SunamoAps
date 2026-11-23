@@ -1,8 +1,17 @@
 namespace SunamoAps._sunamo.SunamoDevCodeBase._public;
 
+/// <summary>
+/// Represents the i progress bar DC type.
+/// </summary>
 public interface IProgressBarDC
 {
+    /// <summary>
+    /// Gets or sets the is registered.
+    /// </summary>
     bool IsRegistered { get; set; }
+    /// <summary>
+    /// Gets or sets the write only dividable by.
+    /// </summary>
     int WriteOnlyDividableBy { get; set; }
     /// <summary>
     /// Init.

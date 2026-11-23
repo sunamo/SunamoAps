@@ -14,7 +14,6 @@ internal class SolutionsIndexerHelper
             System.Diagnostics.Debugger.Break();
         }
 
-        //bool specificNameOfScz = false;
         var originName = string.Empty;
 
         if (name.Contains(".sunamo.cz"))
@@ -34,7 +33,7 @@ internal class SolutionsIndexerHelper
             return result;
         }
 
-        // Fallback: zkusí variantu s "-claude" suffixem (worktree repos)
+        // Fallback: tries the variant with the "-claude" suffix (worktree repos)
         var claudeName = name + "-claude";
         result = SolutionWithNameExact(claudeName);
 
@@ -198,7 +197,6 @@ internal class SolutionsIndexerHelper
             {
                 files[index] = Path.GetFileNameWithoutExtension(files[index]);
             }
-            //files = Path.GetFileNamesWoExtension(files);
             foreach (var item in files)
             {
                 var module = Path.GetFileName(item);

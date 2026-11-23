@@ -1,5 +1,8 @@
 namespace SunamoAps.Aps.Projs;
 
+/// <summary>
+/// Represents the sunamo csproj helper type.
+/// </summary>
 public partial class SunamoCsprojHelper
 {
     // Must have postfix 2 because IsProjectCsprojSdkStyleIsCore has also a same-argument method.
@@ -18,10 +21,15 @@ public partial class SunamoCsprojHelper
             }
         }
 
-        // bez ukončení závorkama protože může být i <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop"> atd.
+        // without closing brackets because it can also be <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop"> etc.
         return fileOrContent!.Contains("Sdk=\"Microsoft.NET.Sdk");
     }
 
+    /// <summary>
+    /// Is project csproj sdk style is core.
+    /// </summary>
+    /// <param name="fileOrContent">The file or content.</param>
+    /// <returns>The is project csproj sdk style is core result.</returns>
     public static
     async Task<IsProjectCsprojSdkStyleResult?>
     IsProjectCsprojSdkStyleIsCore(string fileOrContent)
@@ -56,6 +64,11 @@ public partial class SunamoCsprojHelper
     }
 
     // Whether is old .net fw, version
+    /// <summary>
+    /// Detect net version.
+    /// </summary>
+    /// <param name="path">The path.</param>
+    /// <returns>The detect net version result.</returns>
     public static
     async Task<Tuple<bool, string>>
     DetectNetVersion(string path)
@@ -80,17 +93,11 @@ public partial class SunamoCsprojHelper
         if (isNew)
         {
             //// Probably will be first because "You need to reference the Microsoft.Build.Engine assembly"
-            //Microsoft.Build.Evaluation.Project project = new Microsoft.Build.Evaluation.Project();
             ////Microsoft.CodeAnalysis.Project project = new Microsoft.CodeAnalysis.Project();
             ////Project project = new Project();
-            //project.Load(fullPathName);
-            //var embeddedResources =
-            //    from grp in project.ItemGroups.Cast<BuildItemGroup>()
             //    from item in grp.Cast<BuildItem>()
-            //    where item.Name == "EmbeddedResource"
-            //    select item;
             var list = SHGetLines.GetLines(csprojContent);
-            // žádný https://www.nuget.org/packages?q=Sunamo+Metaproject není, proto není ani TargetFramework a ctor text 2Mi args
+            // there is no https://www.nuget.org/packages?q=Sunamo+Metaproject, so there is no TargetFramework and no ctor text 2Mi args either
             var csp = CsprojFileParser.ParseCsproj( /*list,*/path);
             return new Tuple<bool, string>(isNew, /*csp.TargetFramework*/ null!);
         }
@@ -99,6 +106,11 @@ public partial class SunamoCsprojHelper
         return new Tuple<bool, string>(isNew, VersionHelper.RemovePartsWhichIsZero(value.Version));
     }
 
+    /// <summary>
+    /// Detect net version 2.
+    /// </summary>
+    /// <param name="path">The path.</param>
+    /// <returns>The detect net version 2 result.</returns>
     public static
     async Task<SupportedNetFw>
     DetectNetVersion2(string path)
@@ -128,6 +140,12 @@ public partial class SunamoCsprojHelper
         return SupportedNetFw.BadXml;
     }
 
+    /// <summary>
+    /// Build projects dependency tree list.
+    /// </summary>
+    /// <param name="csprojPath">The csproj path.</param>
+    /// <param name="dictToAvoidCollectionWasChanged">The dict to avoid collection was changed.</param>
+    /// <returns>The build projects dependency tree list result.</returns>
     public static
         async Task<List<string>>
     BuildProjectsDependencyTreeList(string csprojPath, Dictionary<string, XmlDocument> dictToAvoidCollectionWasChanged)
@@ -197,6 +215,11 @@ public partial class SunamoCsprojHelper
         }
     }
 
+    /// <summary>
+    /// Add missing projects.
+    /// </summary>
+    /// <param name="solutionFolder">The solution folder.</param>
+    /// <param name="isAddingDependencies">The is adding dependencies.</param>
     public static
         async Task
     AddMissingProjects(SolutionFolder solutionFolder, bool isAddingDependencies = false)
